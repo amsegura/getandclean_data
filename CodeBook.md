@@ -7,6 +7,7 @@ database "UCI HAR".
 ## Data sets structure
 The data sets generated are composed of: 
 - 3 initial columns that describe the type of data collected:
+
         1. "Data_type": Reflects if the data belongs to the "Test" or "Train"
         group.
         
