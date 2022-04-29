@@ -42,10 +42,10 @@ df_train <- df_train %>% add_column(Data_type, .before = 'Subject_ID')
 df_final <- bind_rows(df_test, df_train)
 
 ## Selecting mean and std columns:
-df_selected <- df_final %>% select(contains('type') | contains('ID') | contains('mean()')|contains('std()'))
+df_final <- df_final %>% select(contains('type') | contains('ID') | contains('mean()')|contains('std()'))
 
 ## Renaming activities:
-df_act_rename <- df_selected %>% mutate(Activity_ID = replace(Activity_ID, Activity_ID == 1, 'Walking')) %>%
+df_final <- df_final %>% mutate(Activity_ID = replace(Activity_ID, Activity_ID == 1, 'Walking')) %>%
         mutate(Activity_ID = replace(Activity_ID, Activity_ID == 2, 'Walking_upstairs')) %>%
         mutate(Activity_ID = replace(Activity_ID, Activity_ID == 3, 'Walking_downstairs')) %>%
         mutate(Activity_ID = replace(Activity_ID, Activity_ID == 4, 'Sitting')) %>%
