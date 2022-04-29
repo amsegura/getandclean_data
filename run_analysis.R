@@ -55,3 +55,5 @@ df_final <- df_final %>% mutate(Activity_ID = replace(Activity_ID, Activity_ID =
 ## Creating a summary dataframe:
 df_summarized <- df_act_rename %>% group_by(Data_type, Subject_ID, Activity_ID) %>% summarise_all(mean)
 
+## Generating the txt file with tidy data
+write.table(df_summarized, 'tidy_data.txt', row.name = FALSE)
